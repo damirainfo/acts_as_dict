@@ -1,6 +1,6 @@
 module ActsAsDict
   module Static
-    def dict_attr(attr)
+    def acts_as_dict_attr(attr)
       attr.each {|k, v|
         class_eval %{
           def #{k}_human
