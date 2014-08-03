@@ -1,6 +1,6 @@
 module ActsAsDict
   class StaticValue < ::ActiveRecord::Base
-    self.table_name = :dict_static_values
+    self.table_name = :static_values
 
     belongs_to :static_type, class_name: 'ActsAsDict::StaticType', foreign_key: :static_type_code
 

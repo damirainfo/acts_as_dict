@@ -1,6 +1,6 @@
 module ActsAsDict
   class StaticType < ::ActiveRecord::Base
-    self.table_name = :dict_static_types
+    self.table_name = :static_types
 
     self.primary_key = :code
 

@@ -4,14 +4,14 @@ module ActsAsDict
       attr.each {|k, v|
         class_eval %{
           def #{k}_human
-            Dict::StaticValue.where(static_type_code: "#{v}", code: #{k}).first.name
+            ActsAsDict::StaticValue.where(static_type_code: "#{v}", code: #{k}).first.name
           end
         }
       }
       attr.each {|k, v|
         instance_eval %{
           def #{k.to_s.pluralize}
-            Dict::StaticValue.#{v}
+            ActsAsDict::StaticValue.#{v}
           end
         }
       }
