@@ -13,5 +13,5 @@ module ActsAsDict
 end
 
 ActiveSupport.on_load(:active_record) do
-  extend ActsAsDict::ActsAsDict
+  extend ActsAsDict::Static
 end
