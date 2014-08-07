@@ -5,7 +5,7 @@ module ActsAsDict
     self.primary_key = :code
 
     belongs_to :parent, class_name: 'ActsAsDict::StaticType'
-    has_many :static_values, class_name: 'ActsAsDict::StaticValue', forgein_key: :static_type_code
+    has_many :static_values, class_name: 'ActsAsDict::StaticValue', foreign_key: :static_type_code
 
     enum status: [:active, :blocked]
 
