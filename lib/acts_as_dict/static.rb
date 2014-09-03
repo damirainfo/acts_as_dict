@@ -33,7 +33,11 @@ module ActsAsDict
           end
           
           def #{k.to_s}_human(code)
-            ActsAsDict::StaticValue.where(static_type_code: "#{v}", code: code).first.name
+            send(#{k.to_s}.to_sym, code).try(:name)
+          end
+
+          def #{k.to_s}(code)
+            ActsAsDict::StaticValue.where(static_type_code: "#{v}", code: code).first
           end
         }
       }
