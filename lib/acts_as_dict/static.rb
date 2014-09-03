@@ -31,6 +31,10 @@ module ActsAsDict
           def #{k.to_s.pluralize}
             ActsAsDict::StaticValue.#{v}
           end
+          
+          def #{k.to_s}_human(code)
+            ActsAsDict::StaticValue.where(static_type_code: "#{v}", code: code).first.name
+          end
         }
       }
     end
